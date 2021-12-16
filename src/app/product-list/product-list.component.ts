@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
 		description: 'SSD  hard   drive',
 		available: new Date('2016-10-03'), price: 75,
 		imageUrl: '/assets/img/ssd.png',
-		rating: 5
+		rating: 3
 	}, {
 		id: 2,
 		description: 'LGA1151  Motherboard',
@@ -25,7 +25,8 @@ export class ProductListComponent implements OnInit {
 	headers = {
 		description: 'Producto',
 		price: 'Precio',
-		available: 'Disponible'
+		available: 'Disponible',
+		rating: 'Puntuación'
 	};
 	showImage: boolean = true;
 	filterSearch = "";

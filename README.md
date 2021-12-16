@@ -1,2 +1,3 @@
 # angular-products
-Practica en angular para hacer los ejercicios
+
+Practica siguiendo los apuntes
