@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../interfaces/i-product';
+import { ProductsService } from '../services/products.service';
 
 @Component({
 	selector: 'product-list',
@@ -8,19 +9,7 @@ import { IProduct } from '../interfaces/i-product';
 })
 export class ProductListComponent implements OnInit {
 
-	products: IProduct[] = [{
-		id: 1,
-		description: 'SSD  hard   drive',
-		available: new Date('2016-10-03'), price: 75,
-		imageUrl: '/assets/img/ssd.png',
-		rating: 3
-	}, {
-		id: 2,
-		description: 'LGA1151  Motherboard',
-		available: new Date('2016-09-15'), price: 96.95,
-		imageUrl: '/assets/img/motherboard.jpg',
-		rating: 4
-	}];
+	products: IProduct[] = [];
 	title = 'Mi   lista  de  productos';
 	headers = {
 		description: 'Producto',
@@ -31,7 +20,9 @@ export class ProductListComponent implements OnInit {
 	showImage: boolean = true;
 	filterSearch = "";
 
-	constructor() { }
+	constructor(private productsService: ProductsService) {
+		this.products = this.productsService.getProducts();
+	}
 
 	ngOnInit() { console.log("ProductListComponent   has  been  initialized!"); }
 	toggleImage(): void {
