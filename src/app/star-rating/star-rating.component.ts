@@ -21,6 +21,7 @@ export class StarRatingComponent implements OnInit {
 	setRating() {
 		this.ratingChanged.emit(this.auxRating);
 	}
+	
 
 
 }

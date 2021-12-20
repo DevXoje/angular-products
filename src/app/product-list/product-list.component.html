@@ -11,6 +11,7 @@
 		<div class="col">{{headers.available}}</div>
 		<div class="col">{{headers.rating}}</div>
 	</div>
-	<product-item class="row no-gutters" *ngFor="let product of products | productFilter:filterSearch" [product]="product" [showImage]="showImage">
+	<product-item class="row no-gutters" *ngFor="let product of products | productFilter:filterSearch"
+		[product]="product" [showImage]="showImage">
 	</product-item>
 </div>

@@ -21,12 +21,18 @@ export class ProductListComponent implements OnInit {
 	filterSearch = "";
 
 	constructor(private productsService: ProductsService) {
-		this.products = this.productsService.getProducts();
 	}
 
-	ngOnInit() { console.log("ProductListComponent   has  been  initialized!"); }
+	ngOnInit() {
+		this.productsService.getProducts().subscribe(
+			res => this.products = res,
+			err => console.log(err),
+			() => console.log('Products loaded')
+		);
+	}
 	toggleImage(): void {
 		this.showImage = !this.showImage;
 	}
+	
 
 }

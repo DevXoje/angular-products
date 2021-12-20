@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { ProductListComponent } from './product-list/product-list.component';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
 import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductListComponent } from './product-list/product-list.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
@@ -12,11 +13,11 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
 		AppComponent,
 		ProductListComponent,
 		ProductFilterPipe,
-  ProductItemComponent,
-  StarRatingComponent
+		ProductItemComponent,
+		StarRatingComponent
 	],
 	imports: [
-		BrowserModule, FormsModule
+		BrowserModule, FormsModule, HttpClientModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
